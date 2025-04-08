@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/02 20:22:01 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/08 22:12:25 by jpedro-b         ###   ########.fr       */
+/*   Created: 2025/04/08 20:21:07 by jpedro-b          #+#    #+#             */
+/*   Updated: 2025/04/08 21:47:57 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_strcmp(const char *s1, const char *s2);
-char	*ft_strcpy(char *dest, const char *src);
-int		ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, int n);
+int	ft_isalnum(int c)
+{
+	return ((ft_isdigit(c) || ft_isalpha(c)));
+}

@@ -1,6 +1,6 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-SRCFILES = ft_isdigit.c ft_strcmp.c ft_strcpy.c ft_strlen.c ft_strncmp.c ft_isalpha.c
+SRCFILES = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_strcmp.c ft_strcpy.c ft_strlen.c ft_strncmp.c
 OBJFILES = $(SRCFILES:.c=.o)
 
 all: $(NAME)
@@ -16,5 +16,6 @@ fclean: clean
 
 re: fclean all
 
-test: $(NAME)
+test: re
 	cc main.c $(CFLAGS) -L. -lft -o main.o && ./main.o
+

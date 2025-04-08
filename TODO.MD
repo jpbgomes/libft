@@ -1,0 +1,1 @@
+# Ask too see if in the isalnum i can call the libft and use the other functions
