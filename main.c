@@ -27,6 +27,11 @@ int main(void)
 	printf("ft_strcmp:\n%d\n\n", ft_strcmp("Teste", "Teste"));
 	printf("ft_strcmp:\n%d\n\n", ft_strcmp("Testa", "Teste"));
 
+	printf("ft_isascii:\n%d\n\n", ft_isascii('A'));
+	printf("ft_isascii:\n%d\n\n", ft_isascii(65));
+	printf("ft_isascii:\n%d\n\n", ft_isascii(200));
+
+
 	char s1[] = "ARROZ";
 	char s2[] = "MASSA";
     printf("ft_strcpy:\nBefore = %s", s1);
