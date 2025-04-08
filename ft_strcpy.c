@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/02 21:00:50 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/02 21:14:58 by jpedro-b         ###   ########.fr       */
+/*   Created: 2025/04/02 21:26:27 by jpedro-b          #+#    #+#             */
+/*   Updated: 2025/04/02 21:28:49 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strlen(const char *str)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	int	i;
+	int	length;
 
-	i = 0;
-	while (str[i])
+	length = 0;
+	while (src[length] != '\0')
 	{
-		i++;
+		dest[length] = src[length];
+		length++;
 	}
-	return (i);
-}
-
-int	main(void)
-{
-	char myStr[] = "Arroz";
-	printf("%d", ft_strlen(myStr));
+	dest[length] = '\0';
+	return (dest);
 }

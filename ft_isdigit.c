@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/02 21:06:02 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/02 21:21:15 by jpedro-b         ###   ########.fr       */
+/*   Created: 2025/04/02 20:43:27 by jpedro-b          #+#    #+#             */
+/*   Updated: 2025/04/08 14:44:34 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strcmp(char *str1, char *str2)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while(str1[i] || str2[i])
+	if (c > 47 && c < 58)
 	{
-		if (str1[i] != str2[i])
-			return(str1[i] - str2[i]);
-		i++;
+		return (1);
 	}
-	return (0);
-}
-
-int	main(void)
-{
-	printf("%d", ft_strcmp("Teste", "Teste"));
+	else
+	{
+		return (0);
+	}
 }
