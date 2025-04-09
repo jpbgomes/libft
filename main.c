@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 11:15:33 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 11:30:27 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 int main(void)
 {
+	char s0[] = "Student at 42";
+	printf("\nft_bzero:\n");
+	printf("Before = %s\n", s0);
+	ft_bzero(s0, 4);
+	printf("After = %s\n", s0);	
+
 	printf("\nft_isalnum:\n");
 	printf("0 = %d\n", ft_isalnum('0'));
 	printf("1 = %d\n", ft_isalnum('1'));
