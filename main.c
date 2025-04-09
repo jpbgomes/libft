@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 12:14:16 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:57:27 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,15 @@ int main(void)
 	char sCpy2[] = "Arroz de Massa";
 	printf("ft_memcpy:\n");
 	printf("Used String = %s\nBefore = %s\n", sCpy2, sCpy);
-	ft_memcpy(sCpy, sCpy2, 3);
+	ft_memcpy(sCpy, sCpy2, 4);
 	printf("After = %s\n\n", sCpy);
+
+	char sMv[] = "Student at 42";
+	char sMv2[] = "Arroz de Massa";
+	printf("ft_memmove:\n");
+	printf("Used String = %s\nBefore = %s\n", sMv2, sMv);
+	ft_memmove(sMv, sMv2, 4);
+	printf("After = %s\n\n", sMv);
 
 	printf("ft_strcmp:\n");
 	printf("Teste, Testa = %d\n", ft_strcmp("Teste", "Testa"));

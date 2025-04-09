@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:22:19 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 11:29:39 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 14:20:43 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-       	unsigned char *ptr;
+	size_t			i;
+	unsigned char	*ptr;
 
 	i = 0;
 	ptr = s;
