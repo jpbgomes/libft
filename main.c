@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 13:57:27 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 14:58:04 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,11 @@ int main(void)
 	ft_memmove(sMv, sMv2, 4);
 	printf("After = %s\n\n", sMv);
 
-	printf("ft_strcmp:\n");
-	printf("Teste, Testa = %d\n", ft_strcmp("Teste", "Testa"));
-	printf("Teste, Teste = %d\n", ft_strcmp("Teste", "Teste"));
-	printf("Testa, Teste = %d\n\n", ft_strcmp("Testa", "Teste"));
-
 	char s1[] = "ARROZ";
 	char s2[] = "MASSA";
-	printf("ft_strcpy:\n");
+	printf("ft_strlcpy:\n");
 	printf("Before = %s\n", s1);
-	printf("After = %s\n\n", ft_strcpy(s1, s2));
+	printf("After = %ld\n\n", ft_strlcpy(s1, s2, 4));
 
 	printf("ft_strlen:\n");
 	printf("Arroz = %zu\n\n", ft_strlen("Arroz"));
