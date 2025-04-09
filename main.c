@@ -48,6 +48,11 @@ int main(void)
 	printf("48 = %d\n", ft_isprint(48));
 	printf("127 = %d\n\n", ft_isprint(127));
 
+	char sMChr[] = "Student at 42";
+	printf("ft_memcpy:\n");
+	printf("Used String = %s\n", sMChr);
+	printf("Result = %d\n\n", ft_memchr(sMChr, 'S', 4));
+
 	char sMCpy[] = "Student at 42";
 	char sMCpy2[] = "Arroz de Massa";
 	printf("ft_memcpy:\n");
