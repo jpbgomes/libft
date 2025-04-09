@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/08 19:54:19 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 11:15:33 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ int main(void)
 	printf("z = %d\n", ft_isalpha('z'));
 	printf("Z = %d\n\n", ft_isalpha('Z'));
 
+	char s3[] = "Student at 42";
+	printf("ft_memset:\n");
+	printf("Before = %s\n", s3);
+	ft_memset(s3, 'A', 3);
+	printf("After = %s\n", s3);
 	return (0);
 }
 
