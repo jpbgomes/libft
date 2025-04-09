@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 15:47:20 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 16:09:27 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,15 @@ int main(void)
 	printf("ft_strncmp:\n");
 	printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
 
+	printf("ft_toupper:\n");
+	printf("a = %c\n", ft_toupper('a'));
+	printf("Z = %c\n", ft_toupper('Z'));
+	printf("- = %c\n\n", ft_toupper('-'));
+
+	printf("ft_tolower:\n");
+	printf("a = %c\n", ft_tolower('a'));
+	printf("Z = %c\n", ft_tolower('Z'));
+	printf("- = %c\n\n", ft_tolower('-'));
 	return (0);
 }
 
