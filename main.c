@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 14:58:04 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 15:47:20 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ int main(void)
 	ft_memset(sSet, 'A', 3);
 	printf("After = %s\n\n", sSet);
 
-	char sCpy[] = "Student at 42";
-	char sCpy2[] = "Arroz de Massa";
+	char sMCpy[] = "Student at 42";
+	char sMCpy2[] = "Arroz de Massa";
 	printf("ft_memcpy:\n");
-	printf("Used String = %s\nBefore = %s\n", sCpy2, sCpy);
-	ft_memcpy(sCpy, sCpy2, 4);
-	printf("After = %s\n\n", sCpy);
+	printf("Used String = %s\nBefore = %s\n", sMCpy2, sMCpy);
+	ft_memcpy(sMCpy, sMCpy2, 4);
+	printf("After = %s\n\n", sMCpy);
 
 	char sMv[] = "Student at 42";
 	char sMv2[] = "Arroz de Massa";
@@ -69,11 +69,17 @@ int main(void)
 	ft_memmove(sMv, sMv2, 4);
 	printf("After = %s\n\n", sMv);
 
-	char s1[] = "ARROZ";
-	char s2[] = "MASSA";
+	char sSCat[] = "ARROZ";
+	char sSCat2[] = "MASSA";
+	printf("ft_strlcat:\n");
+	printf("Before = %s\n", sSCat);
+	printf("After = %ld\n\n", ft_strlcat(sSCat, sSCat2, 11));
+
+	char sSCpy[] = "ARROZ";
+	char sSCpy2[] = "MASSA";
 	printf("ft_strlcpy:\n");
-	printf("Before = %s\n", s1);
-	printf("After = %ld\n\n", ft_strlcpy(s1, s2, 4));
+	printf("Before = %s\n", sSCpy);
+	printf("After = %ld\n\n", ft_strlcpy(sSCpy, sSCpy2, 4));
 
 	printf("ft_strlen:\n");
 	printf("Arroz = %zu\n\n", ft_strlen("Arroz"));
