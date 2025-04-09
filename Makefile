@@ -1,6 +1,6 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-SRCFILES = ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memset.c ft_strcmp.c ft_strcpy.c ft_strlen.c ft_strncmp.c
+SRCFILES = ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memcpy.c ft_memset.c ft_strcmp.c ft_strcpy.c ft_strlen.c ft_strncmp.c
 OBJFILES = $(SRCFILES:.c=.o)
 
 all: $(NAME)
