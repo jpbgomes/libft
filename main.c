@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/09 16:09:27 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:13:26 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ int main(void)
 	printf("48 = %d\n", ft_isprint(48));
 	printf("127 = %d\n\n", ft_isprint(127));
 
-
-	char sSet[] = "Student at 42";
-	printf("ft_memset:\n");
-	printf("Used Char = %cBefore = %s\n", 'A', sSet);
-	ft_memset(sSet, 'A', 3);
-	printf("After = %s\n\n", sSet);
-
 	char sMCpy[] = "Student at 42";
 	char sMCpy2[] = "Arroz de Massa";
 	printf("ft_memcpy:\n");
@@ -68,6 +61,17 @@ int main(void)
 	printf("Used String = %s\nBefore = %s\n", sMv2, sMv);
 	ft_memmove(sMv, sMv2, 4);
 	printf("After = %s\n\n", sMv);
+
+	char sSet[] = "Student at 42";
+	printf("ft_memset:\n");
+	printf("Used Char = %cBefore = %s\n", 'A', sSet);
+	ft_memset(sSet, 'A', 3);
+	printf("After = %s\n\n", sSet);
+
+	char sStrchr[] = "I'm a Student at 42";
+	printf("ft_strchr:\n");
+	printf("Used String = %s\n", sStrchr);
+	printf("Result = %s\n\n", ft_strchr(sStrchr, 'a'));
 
 	char sSCat[] = "ARROZ";
 	char sSCat2[] = "MASSA";
@@ -86,6 +90,11 @@ int main(void)
 
 	printf("ft_strncmp:\n");
 	printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
+
+	char sStrrchr[] = "I'm a Student at 42";
+	printf("ft_strrchr:\n");
+	printf("Used String = %s\n", sStrrchr);
+	printf("Result = %s\n\n", ft_strrchr(sStrrchr, 'a'));
 
 	printf("ft_toupper:\n");
 	printf("a = %c\n", ft_toupper('a'));
