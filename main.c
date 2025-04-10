@@ -14,6 +14,11 @@
 
 int main(void)
 {
+	printf("\nft_atoi:\n");
+	printf("--12345a68 = %d\n", ft_atoi("--12345a68"));
+	printf("-12345a68 = %d\n", ft_atoi("-12345a68"));
+	printf("+12345a68 = %d\n", ft_atoi("+12345a68"));
+
 	char s0[] = "Student at 42";
 	printf("\nft_bzero:\n");
 	printf("Before = %s\n", s0);

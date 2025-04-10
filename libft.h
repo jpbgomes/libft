@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 20:22:01 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 12:29:30 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:41:12 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 
+int		ft_atoi(const char *npt);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
