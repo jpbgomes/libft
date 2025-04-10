@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 15:55:33 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 17:08:06 by jpedro-b         ###   ########.fr       */
+/*   Created: 2025/04/10 16:59:07 by jpedro-b          #+#    #+#             */
+/*   Updated: 2025/04/10 17:34:47 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	unsigned int	sl;
-	char			*tmp;
+	char	*tmp;
+	size_t	i;
 
-	i = start;
-	sl = ft_strlen(s);
-	if (start > sl)
-		return (ft_strdup(""));
-	tmp = malloc(len + 1);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	tmp = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (tmp == NULL)
 		return (NULL);
-	while (s[i] && (i - start) < len)
+	i = 0;
+	while (i < (ft_strlen(s1) + ft_strlen(s2)))
 	{
-		tmp[i - start] = s[i];
+		if (i < ft_strlen(s1))
+			tmp[i] = s1[i];
+		else
+			tmp[i] = s2[i - ft_strlen(s1)];
 		i++;
 	}
-	tmp[i - start] = '\0';
+	tmp[i] = '\0';
 	return (tmp);
 }

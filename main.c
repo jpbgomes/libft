@@ -112,6 +112,18 @@ int main(void)
 		printf("\n\n");
 	}
 
+	printf("\nft_strjoin:\n");
+	char sStrjoin[] = "I'm a ";
+	char sStrjoin2[] = "Student at 42";
+	char *strjoinResult = ft_strjoin(sStrjoin, sStrjoin2);
+   	if (strjoinResult == NULL) {
+        printf("StrJoin Memory allocation failed\n\n");
+    } else {
+		printf("StrJoin Result = %s\n", strjoinResult);
+		free(strjoinResult);
+		printf("\n\n");
+	}
+
 	char sSCat[] = "ARROZ";
 	char sSCat2[] = "MASSA";
 	printf("ft_strlcat:\n");
