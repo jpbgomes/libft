@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 11:45:49 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/10 11:49:13 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ int main(void)
 	printf("ft_memchr:\n");
 	printf("Used String = %s\n", sMChr);
 	printf("Result = %s\n\n", (char *)ft_memchr(sMChr, 'u', 4));
+
+	char sMCmp[] = "Student at 42";
+	char sMCmp2[] = "Arroz de Massa";
+	printf("ft_memcmp:\n");
+	printf("Used String = %s\nBefore = %s\n", sMCmp2, sMCmp);
+	printf("Result = %d\n\n", ft_memcmp(sMCmp, sMCmp2, 4));
 
 	char sMCpy[] = "Student at 42";
 	char sMCpy2[] = "Arroz de Massa";
