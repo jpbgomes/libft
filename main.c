@@ -101,6 +101,17 @@ int main(void)
 	printf("Used String = %s\n", sStrchr);
 	printf("Result = %s\n\n", ft_strchr(sStrchr, 'a'));
 
+	printf("\nft_strdup:\n");
+	char sStrdup[] = "I'm a Student at 42";
+	char *strdupResult = ft_strdup(sStrdup);
+   	if (strdupResult == NULL) {
+        printf("Strdup Memory allocation failed\n\n");
+    } else {
+		printf("Strdup Result = %s\n", strdupResult);
+		free(strdupResult);
+		printf("\n\n");
+	}
+
 	char sSCat[] = "ARROZ";
 	char sSCat2[] = "MASSA";
 	printf("ft_strlcat:\n");
