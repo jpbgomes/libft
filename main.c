@@ -107,15 +107,30 @@ int main(void)
 	printf("Used String = %s\n", sStrrchr);
 	printf("Result = %s\n\n", ft_strrchr(sStrrchr, 'a'));
 
-	printf("ft_toupper:\n");
-	printf("a = %c\n", ft_toupper('a'));
-	printf("Z = %c\n", ft_toupper('Z'));
-	printf("- = %c\n\n", ft_toupper('-'));
+	char sStrstr[] = "Student at 42";
+	char sStrstr2[] = "";
+	char sStrstr3[] = "at";
+	char sStrstr4[] = "42 School";
+	printf("ft_strstr:\n");
+	printf("Used String = %s\nBefore = %s\n", sStrstr2, sStrstr);
+	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr2));
+
+	printf("Used String = %s\nBefore = %s\n", sStrstr3, sStrstr);
+	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr3));
+
+	printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
+	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
 
 	printf("ft_tolower:\n");
 	printf("a = %c\n", ft_tolower('a'));
 	printf("Z = %c\n", ft_tolower('Z'));
 	printf("- = %c\n\n", ft_tolower('-'));
+
+	printf("ft_toupper:\n");
+	printf("a = %c\n", ft_toupper('a'));
+	printf("Z = %c\n", ft_toupper('Z'));
+	printf("- = %c\n\n", ft_toupper('-'));
+
 	return (0);
 }
 

@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 11:50:09 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 12:31:28 by jpedro-b         ###   ########.fr       */
+/*   Created: 2025/04/10 12:06:43 by jpedro-b          #+#    #+#             */
+/*   Updated: 2025/04/10 12:29:06 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strstr(const char *big, const char *little)
 {
-	size_t			i;
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
+	int	i;
+	int	z;
 
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	if (ft_strlen(little) <= 0)
+		return ((char *)big);
+	while (big[i])
 	{
-		if (ptr1[i] != ptr2[i])
-			return (ptr1[i] - ptr2[i]);
+		if (big[i] == little[0])
+		{
+			z = 0;
+			printf("FIRST FOUNDED\n");
+			while (big[i] == little[z])
+			{
+				if (little[z + 1] == '\0')
+					return ((char *)big + (i - z));
+				z++;
+				i++;
+			}
+		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
