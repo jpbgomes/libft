@@ -25,6 +25,18 @@ int main(void)
 	ft_bzero(s0, 4);
 	printf("After = %s\n", s0);	
 
+	printf("\nft_calloc:\n");
+	int *callocResult = (int *)ft_calloc(5, sizeof(int));
+   	if (callocResult == NULL) {
+        printf("Calloc Memory allocation failed\n\n");
+    } else {
+		for (int i = 0; i < 5; i++) {
+			printf("Calloc Result = %d\n", callocResult[i]);
+		}
+		free(callocResult);
+		printf("\n\n");
+	}
+
 	printf("\nft_isalnum:\n");
 	printf("0 = %d\n", ft_isalnum('0'));
 	printf("1 = %d\n", ft_isalnum('1'));
