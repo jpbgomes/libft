@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 20:22:01 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 16:58:52 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/10 18:10:27 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ int		ft_toupper(int c);
 
 //P2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
+char	*ft_strtrim(char const *s1, char const *set);
 #endif

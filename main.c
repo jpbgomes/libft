@@ -159,27 +159,32 @@ int main(void)
 	printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
 	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
 
+	char sStrtrim[] = "...I'm a Student. At 42...";
+	printf("ft_strtrim:\n");
+	printf("Used String = %s\n", sStrtrim);
+	printf("Result = %s\n\n", ft_strtrim(sStrtrim, "."));
 
-	printf("\nft_substr:\n");
-	char sSubstr[] = "I'm a Student at 42";
-	char *substrResult = ft_substr(sSubstr, 6, 7);
-   	if (substrResult == NULL) {
-        printf("Substr Memory allocation failed\n\n");
-    } else {
-		printf("Substr Result = %s\n", substrResult);
-		free(substrResult);
-		printf("\n\n");
-	}
 
-	printf("ft_tolower:\n");
-	printf("a = %c\n", ft_tolower('a'));
-	printf("Z = %c\n", ft_tolower('Z'));
-	printf("- = %c\n\n", ft_tolower('-'));
+	// printf("\nft_substr:\n");
+	// char sSubstr[] = "I'm a Student at 42";
+	// char *substrResult = ft_substr(sSubstr, 6, 7);
+   	// if (substrResult == NULL) {
+    //     printf("Substr Memory allocation failed\n\n");
+    // } else {
+	// 	printf("Substr Result = %s\n", substrResult);
+	// 	free(substrResult);
+	// 	printf("\n\n");
+	// }
 
-	printf("ft_toupper:\n");
-	printf("a = %c\n", ft_toupper('a'));
-	printf("Z = %c\n", ft_toupper('Z'));
-	printf("- = %c\n\n", ft_toupper('-'));
+	// printf("ft_tolower:\n");
+	// printf("a = %c\n", ft_tolower('a'));
+	// printf("Z = %c\n", ft_tolower('Z'));
+	// printf("- = %c\n\n", ft_tolower('-'));
+
+	// printf("ft_toupper:\n");
+	// printf("a = %c\n", ft_toupper('a'));
+	// printf("Z = %c\n", ft_toupper('Z'));
+	// printf("- = %c\n\n", ft_toupper('-'));
 
 	return (0);
 }
