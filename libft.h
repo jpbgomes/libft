@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 20:22:01 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 15:39:47 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:55:17 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+//P1
 int		ft_atoi(const char *npt);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -39,5 +40,8 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *big, const char *little);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+//P2
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

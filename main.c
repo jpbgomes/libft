@@ -142,12 +142,22 @@ int main(void)
 	printf("ft_strstr:\n");
 	printf("Used String = %s\nBefore = %s\n", sStrstr2, sStrstr);
 	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr2));
-
 	printf("Used String = %s\nBefore = %s\n", sStrstr3, sStrstr);
 	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr3));
-
 	printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
 	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
+
+
+	printf("\nft_substr:\n");
+	char sSubstr[] = "I'm a Student at 42";
+	char *substrResult = ft_substr(sSubstr, 6, 7);
+   	if (substrResult == NULL) {
+        printf("Substr Memory allocation failed\n\n");
+    } else {
+		printf("Substr Result = %s\n", substrResult);
+		free(substrResult);
+		printf("\n\n");
+	}
 
 	printf("ft_tolower:\n");
 	printf("a = %c\n", ft_tolower('a'));
