@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:06:43 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 12:29:06 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:37:11 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,18 @@
 char	*ft_strstr(const char *big, const char *little)
 {
 	int	i;
-	int	z;
+	int	j;
 
 	i = 0;
-	if (ft_strlen(little) <= 0)
+	if (!*little)
 		return ((char *)big);
 	while (big[i])
 	{
-		if (big[i] == little[0])
-		{
-			z = 0;
-			printf("FIRST FOUNDED\n");
-			while (big[i] == little[z])
-			{
-				if (little[z + 1] == '\0')
-					return ((char *)big + (i - z));
-				z++;
-				i++;
-			}
-		}
+		j = 0;
+		while (big[i + j] && little[i + j] && big[i + j] == little[j])
+			j++;
+		if (little[j] == '\0')
+			return ((char *)big + i);
 		i++;
 	}
 	return (NULL);
