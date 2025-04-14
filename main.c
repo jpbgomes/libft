@@ -15,6 +15,7 @@
 int main(void)
 {
 	printf("\nft_atoi:\n");
+	printf(" -12345a68 = %d\n", ft_atoi(" -12345a68"));
 	printf("--12345a68 = %d\n", ft_atoi("--12345a68"));
 	printf("-12345a68 = %d\n", ft_atoi("-12345a68"));
 	printf("+12345a68 = %d\n", ft_atoi("+12345a68"));
@@ -96,82 +97,102 @@ int main(void)
 	ft_memset(sSet, 'A', 3);
 	printf("After = %s\n\n", sSet);
 
-	char sStrchr[] = "I'm a Student at 42";
-	printf("ft_strchr:\n");
-	printf("Used String = %s\n", sStrchr);
-	printf("Result = %s\n\n", ft_strchr(sStrchr, 'a'));
-
-	printf("\nft_strdup:\n");
-	char sStrdup[] = "I'm a Student at 42";
-	char *strdupResult = ft_strdup(sStrdup);
-   	if (strdupResult == NULL) {
-        printf("Strdup Memory allocation failed\n\n");
+	printf("\nft_split:\n");
+	char sSplit[] = "I'm a Student at 42";
+	char **splitResult = ft_split(sSplit, ' ');
+   	if (splitResult == NULL) {
+        printf("Split Memory allocation failed\n\n");
     } else {
-		printf("Strdup Result = %s\n", strdupResult);
-		free(strdupResult);
-		printf("\n\n");
+		// printf("Split Result = %p\n", splitResult);
+		// free(splitResult);
+		// printf("\n\n");
+
+		int i = 0;
+		while (splitResult[i])
+		{
+			printf("%s\n", splitResult[i]);
+			free(splitResult[i]);
+			i++;
+		}
+		free(splitResult);
 	}
 
-	printf("\nft_strjoin:\n");
-	char sStrjoin[] = "I'm a ";
-	char sStrjoin2[] = "Student at 42";
-	char *strjoinResult = ft_strjoin(sStrjoin, sStrjoin2);
-   	if (strjoinResult == NULL) {
-        printf("StrJoin Memory allocation failed\n\n");
-    } else {
-		printf("StrJoin Result = %s\n", strjoinResult);
-		free(strjoinResult);
-		printf("\n\n");
-	}
+	// char sStrchr[] = "I'm a Student at 42";
+	// printf("ft_strchr:\n");
+	// printf("Used String = %s\n", sStrchr);
+	// printf("Result = %s\n\n", ft_strchr(sStrchr, 'a'));
 
-	char sSCat[] = "ARROZ";
-	char sSCat2[] = "MASSA";
-	printf("ft_strlcat:\n");
-	printf("Before = %s\n", sSCat);
-	printf("After = %ld\n\n", ft_strlcat(sSCat, sSCat2, 11));
+	// printf("\nft_strdup:\n");
+	// char sStrdup[] = "I'm a Student at 42";
+	// char *strdupResult = ft_strdup(sStrdup);
+   	// if (strdupResult == NULL) {
+    //     printf("Strdup Memory allocation failed\n\n");
+    // } else {
+	// 	printf("Strdup Result = %s\n", strdupResult);
+	// 	free(strdupResult);
+	// 	printf("\n\n");
+	// }
 
-	char sSCpy[] = "ARROZ";
-	char sSCpy2[] = "MASSA";
-	printf("ft_strlcpy:\n");
-	printf("Before = %s\n", sSCpy);
-	printf("After = %ld\n\n", ft_strlcpy(sSCpy, sSCpy2, 4));
+	// printf("\nft_strjoin:\n");
+	// char sStrjoin[] = "I'm a ";
+	// char sStrjoin2[] = "Student at 42";
+	// char *strjoinResult = ft_strjoin(sStrjoin, sStrjoin2);
+   	// if (strjoinResult == NULL) {
+    //     printf("StrJoin Memory allocation failed\n\n");
+    // } else {
+	// 	printf("StrJoin Result = %s\n", strjoinResult);
+	// 	free(strjoinResult);
+	// 	printf("\n\n");
+	// }
 
-	printf("ft_strlen:\n");
-	printf("Arroz = %zu\n\n", ft_strlen("Arroz"));
+	// char sSCat[] = "ARROZ";
+	// char sSCat2[] = "MASSA";
+	// printf("ft_strlcat:\n");
+	// printf("Before = %s\n", sSCat);
+	// printf("After = %ld\n\n", ft_strlcat(sSCat, sSCat2, 11));
 
-	printf("ft_strncmp:\n");
-	printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
+	// char sSCpy[] = "ARROZ";
+	// char sSCpy2[] = "MASSA";
+	// printf("ft_strlcpy:\n");
+	// printf("Before = %s\n", sSCpy);
+	// printf("After = %ld\n\n", ft_strlcpy(sSCpy, sSCpy2, 4));
 
-	char sStrrchr[] = "I'm a Student at 42";
-	printf("ft_strrchr:\n");
-	printf("Used String = %s\n", sStrrchr);
-	printf("Result = %s\n\n", ft_strrchr(sStrrchr, 'a'));
+	// printf("ft_strlen:\n");
+	// printf("Arroz = %zu\n\n", ft_strlen("Arroz"));
 
-	char sStrstr[] = "Student at 42";
-	char sStrstr2[] = "";
-	char sStrstr3[] = "at";
-	char sStrstr4[] = "42 School";
-	printf("ft_strstr:\n");
-	printf("Used String = %s\nBefore = %s\n", sStrstr2, sStrstr);
-	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr2));
-	printf("Used String = %s\nBefore = %s\n", sStrstr3, sStrstr);
-	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr3));
-	printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
-	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
+	// printf("ft_strncmp:\n");
+	// printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
 
-	char sStrtrim[] = "...I'm a Student. At 42...";
-	// char sStrtrim[] = "...I'm a Student. At 42.";
-	// char sStrtrim[] = "......";
-	printf("ft_strtrim:\n");
-	printf("Used String = %s\n", sStrtrim);
-	char *trimResult = (char *)ft_strtrim(sStrtrim, ".");
-   	if (trimResult == NULL) {
-        printf("StrTrim Memory allocation failed\n\n");
-    } else {
-		printf("StrTrim Result = %s\n", trimResult);
-		free(trimResult);
-		printf("\n\n");
-	}
+	// char sStrrchr[] = "I'm a Student at 42";
+	// printf("ft_strrchr:\n");
+	// printf("Used String = %s\n", sStrrchr);
+	// printf("Result = %s\n\n", ft_strrchr(sStrrchr, 'a'));
+
+	// char sStrstr[] = "Student at 42";
+	// char sStrstr2[] = "";
+	// char sStrstr3[] = "at";
+	// char sStrstr4[] = "42 School";
+	// printf("ft_strstr:\n");
+	// printf("Used String = %s\nBefore = %s\n", sStrstr2, sStrstr);
+	// printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr2));
+	// printf("Used String = %s\nBefore = %s\n", sStrstr3, sStrstr);
+	// printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr3));
+	// printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
+	// printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
+
+	// char sStrtrim[] = "...I'm a Student. At 42...";
+	// // char sStrtrim[] = "...I'm a Student. At 42.";
+	// // char sStrtrim[] = "......";
+	// printf("ft_strtrim:\n");
+	// printf("Used String = %s\n", sStrtrim);
+	// char *trimResult = (char *)ft_strtrim(sStrtrim, ".");
+   	// if (trimResult == NULL) {
+    //     printf("StrTrim Memory allocation failed\n\n");
+    // } else {
+	// 	printf("StrTrim Result = %s\n", trimResult);
+	// 	free(trimResult);
+	// 	printf("\n\n");
+	// }
 
 	// printf("\nft_substr:\n");
 	// char sSubstr[] = "I'm a Student at 42";
