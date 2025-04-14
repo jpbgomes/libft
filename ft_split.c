@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:25:23 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 17:37:46 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:51:20 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,16 @@ char	**ft_split(char const *s, char c)
 	int		wc;
 	int		wl;
 
-	res = NULL;
-	if (! s || ! c)
+	if (! s)
 		return (NULL);
 	i = 0;
 	j = 0;
 	k = 0;
 	wc = ft_countwords(s, c);
-	res = malloc(wc * sizeof(char *));
-	while (i < wc - 1)
+	res = malloc((wc + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	while (i < wc)
 	{
 		while (s[k] == c)
 			k++;
@@ -70,6 +71,7 @@ char	**ft_split(char const *s, char c)
 		res[i] = malloc(wl + 1);
 		if (!res[i])
 			return (NULL);
+		j = 0;
 		while (j < wl)
 		{
 			res[i][j] = s[k];
@@ -77,8 +79,8 @@ char	**ft_split(char const *s, char c)
 			k++;
 		}
 		res[i][j] = '\0';
-		j = 0;
 		i++;
 	}
+	res[i] = NULL;
 	return (res);
 }
