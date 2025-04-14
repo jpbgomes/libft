@@ -110,7 +110,7 @@ int main(void)
 		int i = 0;
 		while (splitResult[i])
 		{
-			printf("%s\n", splitResult[i]);
+			// printf("%s\n", splitResult[i]);
 			free(splitResult[i]);
 			i++;
 		}

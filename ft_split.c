@@ -6,7 +6,7 @@
 /*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:25:23 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 15:58:59 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:06:49 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char	**ft_split(char const *s, char c)
 	int	j;
 	int	k;
 	int	wc;
+	int	wl;
 
 	res = NULL;
 	if (! s || ! c)
@@ -67,20 +68,19 @@ char	**ft_split(char const *s, char c)
 	res = malloc(wc * sizeof(char *));
 	while (i < wc)
 	{
-		//printf("\n%d - %d = %d\n", k, j, ft_wordlen(s, k, c));
-		res[i] = malloc(ft_wordlen(s, k, c) + 1);
-		if (! res[i])
-			return (NULL);
-		while (j < ft_wordlen(s, k, c))
-		{
+		wl = ft_wordlen(s, k, c);
+		res[i] = malloc(wl + 1);
+		if (!res[i])
+			return NULL;
+		
+		while (j < wl) {
 			res[i][j] = s[k];
 			j++;
 			k++;
 		}
-		res[i][j] = '\0';
-		printf("%s\n", res[i]);
+		res[i][j] = '\0';		
+		printf("%s - %d\n", res[i], k);
 		j = 0;
-
 		i++;
 	}
 	
