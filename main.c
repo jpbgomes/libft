@@ -159,8 +159,9 @@ int main(void)
 	printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
 	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
 
-	// char sStrtrim[] = "...I'm a Student. At 42...";
-	char sStrtrim[] = "......";
+	char sStrtrim[] = "...I'm a Student. At 42...";
+	// char sStrtrim[] = "...I'm a Student. At 42.";
+	// char sStrtrim[] = "......";
 	printf("ft_strtrim:\n");
 	printf("Used String = %s\n", sStrtrim);
 	char *trimResult = (char *)ft_strtrim(sStrtrim, ".");
