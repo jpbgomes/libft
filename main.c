@@ -159,11 +159,18 @@ int main(void)
 	printf("Used String = %s\nBefore = %s\n", sStrstr4, sStrstr);
 	printf("Result = %s\n\n", ft_strstr(sStrstr, sStrstr4));
 
-	char sStrtrim[] = "...I'm a Student. At 42...";
+	// char sStrtrim[] = "...I'm a Student. At 42...";
+	char sStrtrim[] = "......";
 	printf("ft_strtrim:\n");
 	printf("Used String = %s\n", sStrtrim);
-	printf("Result = %s\n\n", ft_strtrim(sStrtrim, "."));
-
+	char *trimResult = (char *)ft_strtrim(sStrtrim, ".");
+   	if (trimResult == NULL) {
+        printf("StrTrim Memory allocation failed\n\n");
+    } else {
+		printf("StrTrim Result = %s\n", trimResult);
+		free(trimResult);
+		printf("\n\n");
+	}
 
 	// printf("\nft_substr:\n");
 	// char sSubstr[] = "I'm a Student at 42";
