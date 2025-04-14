@@ -12,7 +12,7 @@ clean:
 	rm -f $(OBJFILES)
 
 fclean: clean
-	rm -f $(NAME) main.o main_dbg
+	rm -f $(NAME) main.o main_gdb
 
 re: fclean all
 

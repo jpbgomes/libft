@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:25:23 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 16:06:49 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:37:46 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,17 @@ int	ft_wordlen(char const *s, int start, char c)
 	i = start;
 	while (s[i] && s[i] != c)
 		i++;
-	printf("\nWL = %d/%d\n", i, start);
-	return (i);
+	return (i - start);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int	i;
-	int	j;
-	int	k;
-	int	wc;
-	int	wl;
+	int		i;
+	int		j;
+	int		k;
+	int		wc;
+	int		wl;
 
 	res = NULL;
 	if (! s || ! c)
@@ -62,27 +61,24 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	k = 0;
 	wc = ft_countwords(s, c);
-
-	printf("\nWC = %d\n", wc);
-
 	res = malloc(wc * sizeof(char *));
-	while (i < wc)
+	while (i < wc - 1)
 	{
+		while (s[k] == c)
+			k++;
 		wl = ft_wordlen(s, k, c);
 		res[i] = malloc(wl + 1);
 		if (!res[i])
-			return NULL;
-		
-		while (j < wl) {
+			return (NULL);
+		while (j < wl)
+		{
 			res[i][j] = s[k];
 			j++;
 			k++;
 		}
-		res[i][j] = '\0';		
-		printf("%s - %d\n", res[i], k);
+		res[i][j] = '\0';
 		j = 0;
 		i++;
 	}
-	
-	return (char **)res;
+	return (res);
 }

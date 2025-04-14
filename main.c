@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpedro-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/10 11:49:13 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:32:46 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int main(void)
 
 	char sSet[] = "Student at 42";
 	printf("ft_memset:\n");
-	printf("Used Char = %cBefore = %s\n", 'A', sSet);
+	printf("Used Char = %c\nBefore = %s\n", 'A', sSet);
 	ft_memset(sSet, 'A', 3);
 	printf("After = %s\n\n", sSet);
 
@@ -103,14 +103,10 @@ int main(void)
    	if (splitResult == NULL) {
         printf("Split Memory allocation failed\n\n");
     } else {
-		// printf("Split Result = %p\n", splitResult);
-		// free(splitResult);
-		// printf("\n\n");
-
 		int i = 0;
 		while (splitResult[i])
 		{
-			// printf("%s\n", splitResult[i]);
+			printf("Split [%d] = %s\n", i, splitResult[i]);
 			free(splitResult[i]);
 			i++;
 		}

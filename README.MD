@@ -1,6 +1,5 @@
 # TODO
-- Verify all headers in each file!
-- Atoi with whitespices
+- Split with Norm
 
 # ON SENDING
 - Remove README, main, subject and fix bonus
