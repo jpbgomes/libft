@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+char	upper_caller(unsigned int, char c)
+{
+	if (c >= 97 && c <= 122)
+		return (ft_toupper(c));
+	return (c);
+}
+
 int main(void)
 {
 	printf("\nft_atoi:\n");
@@ -76,7 +83,7 @@ int main(void)
 		printf("\n\n");
 	}
 	
-	/*char sMChr[] = "Student at 42";
+	char sMChr[] = "Student at 42";
 	printf("ft_memchr:\n");
 	printf("Used String = %s\n", sMChr);
 	printf("Result = %s\n\n", (char *)ft_memchr(sMChr, 'u', 4));
@@ -140,6 +147,7 @@ int main(void)
 	}
 
 	printf("\nft_strjoin:\n");
+
 	char sStrjoin[] = "I'm a ";
 	char sStrjoin2[] = "Student at 42";
 	char *strjoinResult = ft_strjoin(sStrjoin, sStrjoin2);
@@ -166,6 +174,20 @@ int main(void)
 	printf("ft_strlen:\n");
 	printf("Arroz = %zu\n\n", ft_strlen("Arroz"));
 
+
+
+	printf("ft_strmapi\n");
+	char *mapiResult = ft_strmapi("hello", upper_caller);
+	if (mapiResult == NULL)
+		printf("StrMapi Memory allocation failed\n\n");
+	else {
+		printf("StrMapi Result = %s", mapiResult);
+		free(mapiResult);
+		printf("\n\n");
+	}
+
+
+	/*
 	printf("ft_strncmp:\n");
 	printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
 
@@ -219,7 +241,9 @@ int main(void)
 	printf("ft_toupper:\n");
 	printf("a = %c\n", ft_toupper('a'));
 	printf("Z = %c\n", ft_toupper('Z'));
-	printf("- = %c\n\n", ft_toupper('-'));*/
+	printf("- = %c\n\n", ft_toupper('-'));
+	*/
+
 	return (0);
 }
 
