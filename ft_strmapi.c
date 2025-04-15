@@ -2,10 +2,12 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int i, char c))
 {
-	int		x;
-	int		len;
-	char	*res;
+	size_t		x;
+	size_t		len;
+	char		*res;
 
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen(s);
 	res = malloc(len + 1);
 	if (res == NULL)

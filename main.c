@@ -19,6 +19,13 @@ char	upper_caller(unsigned int, char c)
 	return (c);
 }
 
+void	upper_replacer(unsigned int, char *c)
+{
+	if (*c >= 97 && *c <= 122)
+		*c = ft_toupper(*c);
+}
+	
+
 int main(void)
 {
 	printf("\nft_atoi:\n");
@@ -144,10 +151,14 @@ int main(void)
 		printf("Strdup Result = %s\n", strdupResult);
 		free(strdupResult);
 		printf("\n\n");
-	}
+   	}
 
+	char sStrIteri[] = "hello, my name is jose";
+	ft_striteri(sStrIteri, upper_replacer);
+	printf("Iteri Result = %s\n", sStrIteri);
+
+	/*
 	printf("\nft_strjoin:\n");
-
 	char sStrjoin[] = "I'm a ";
 	char sStrjoin2[] = "Student at 42";
 	char *strjoinResult = ft_strjoin(sStrjoin, sStrjoin2);
@@ -187,7 +198,6 @@ int main(void)
 	}
 
 
-	/*
 	printf("ft_strncmp:\n");
 	printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
 
