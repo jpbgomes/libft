@@ -125,11 +125,22 @@ int main(void)
 	printf("Used Char = %c\n", 'Z');
 	ft_putchar_fd('Z', 1);
 	printf("\n\n");
-
+	
+	printf("ft_putendl_fd:\n");
+	printf("Used String = Hello, world!\n");
+	ft_putendl_fd("Hello, world!", 1);
+	printf("\n\n");
+	
+	printf("ft_putnbr_fd:\n");
+	printf("Used Int = -12345!\n");
+	ft_putnbr_fd(-12345, 1);
+	printf("\n\n");
+	
 	printf("ft_putstr_fd:\n");
 	printf("Used String = Hello, world!\n");
 	ft_putstr_fd("Hello, world!", 1);
 	printf("\n\n");
+	
 	/*
 	printf("\nft_split:\n");
 	char sSplit[] = "I'm a Student at 42";

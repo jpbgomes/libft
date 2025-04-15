@@ -5,6 +5,8 @@
 - Striteri missing Norm
 - PutChar missing Norm
 - PutStr missing Norm
+- PutEndDl missing Norm
+- PutNbr missing Norm
 
 # BEFORE SENDING
 - Francinette
