@@ -66,7 +66,17 @@ int main(void)
 	printf("48 = %d\n", ft_isprint(48));
 	printf("127 = %d\n\n", ft_isprint(127));
 
-	char sMChr[] = "Student at 42";
+	printf("\nft_itoa:\n");
+	char *itoaResult = ft_itoa(-123);
+	if (itoaResult == NULL)
+		printf("Itoa Memory allocation failed \n\n");
+	else {
+		printf("Itoa Result = %s\n", itoaResult);
+		free(itoaResult);
+		printf("\n\n");
+	}
+	
+	/*char sMChr[] = "Student at 42";
 	printf("ft_memchr:\n");
 	printf("Used String = %s\n", sMChr);
 	printf("Result = %s\n\n", (char *)ft_memchr(sMChr, 'u', 4));
@@ -209,8 +219,7 @@ int main(void)
 	printf("ft_toupper:\n");
 	printf("a = %c\n", ft_toupper('a'));
 	printf("Z = %c\n", ft_toupper('Z'));
-	printf("- = %c\n\n", ft_toupper('-'));
-
+	printf("- = %c\n\n", ft_toupper('-'));*/
 	return (0);
 }
 
