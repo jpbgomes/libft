@@ -121,6 +121,16 @@ int main(void)
 	ft_memset(sSet, 'A', 3);
 	printf("After = %s\n\n", sSet);
 
+	printf("ft_putchar_fd:\n");
+	printf("Used Char = %c\n", 'Z');
+	ft_putchar_fd('Z', 1);
+	printf("\n\n");
+
+	printf("ft_putstr_fd:\n");
+	printf("Used String = Hello, world!\n");
+	ft_putstr_fd("Hello, world!", 1);
+	printf("\n\n");
+	/*
 	printf("\nft_split:\n");
 	char sSplit[] = "I'm a Student at 42";
 	char **splitResult = ft_split(sSplit, ' ');
@@ -157,7 +167,6 @@ int main(void)
 	ft_striteri(sStrIteri, upper_replacer);
 	printf("Iteri Result = %s\n", sStrIteri);
 
-	/*
 	printf("\nft_strjoin:\n");
 	char sStrjoin[] = "I'm a ";
 	char sStrjoin2[] = "Student at 42";
