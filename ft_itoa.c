@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/16 11:46:43 by jpedro-b          #+#    #+#             */
+/*   Updated: 2025/04/16 11:54:52 by jpedro-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_countdigits(int n)
@@ -22,10 +34,10 @@ int	ft_countdigits(int n)
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	x;
-	int	sign;
-	int	digits;
+	int		i;
+	int		x;
+	int		sign;
+	int		digits;
 	char	*res;
 
 	i = 0;
@@ -42,7 +54,6 @@ char	*ft_itoa(int n)
 	}
 	while (i < digits)
 	{
-		printf("%d - %d\n", digits - i, x % 10);
 		if (digits - i == 1 && sign == -1)
 			res[digits - i - 1] = '-';
 		else
@@ -51,9 +62,5 @@ char	*ft_itoa(int n)
 		x = x / 10;
 	}
 	res[digits] = '\0';
-
-	printf("Res = %s\n", res);
-	printf("Digits = %d\nSign = %d\n", digits, sign);
-
-	return (res);	
-}	
+	return (res);
+}

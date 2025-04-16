@@ -6,22 +6,22 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 17:50:05 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/16 12:41:22 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	upper_caller(unsigned int, char c)
+char	upper_caller(unsigned int i, char c)
 {
-	if (c >= 97 && c <= 122)
+	if (c >= 97 && c <= 122 && i)
 		return (ft_toupper(c));
 	return (c);
 }
 
-void	upper_replacer(unsigned int, char *c)
+void	upper_replacer(unsigned int i, char *c)
 {
-	if (*c >= 97 && *c <= 122)
+	if (*c >= 97 && *c <= 122 && i)
 		*c = ft_toupper(*c);
 }
 	
@@ -141,7 +141,6 @@ int main(void)
 	ft_putstr_fd("Hello, world!", 1);
 	printf("\n\n");
 	
-	/*
 	printf("\nft_split:\n");
 	char sSplit[] = "I'm a Student at 42";
 	char **splitResult = ft_split(sSplit, ' ');
@@ -206,7 +205,6 @@ int main(void)
 	printf("Arroz = %zu\n\n", ft_strlen("Arroz"));
 
 
-
 	printf("ft_strmapi\n");
 	char *mapiResult = ft_strmapi("hello", upper_caller);
 	if (mapiResult == NULL)
@@ -216,7 +214,6 @@ int main(void)
 		free(mapiResult);
 		printf("\n\n");
 	}
-
 
 	printf("ft_strncmp:\n");
 	printf("Teste, Arroz, 3) = %d\n\n", ft_strncmp("Teste", "Arroz", 3));
@@ -272,7 +269,19 @@ int main(void)
 	printf("a = %c\n", ft_toupper('a'));
 	printf("Z = %c\n", ft_toupper('Z'));
 	printf("- = %c\n\n", ft_toupper('-'));
-	*/
+
+	// BONNUS
+
+	printf("\nft_lstnew:\n");
+	char lstNew[] = "I'm a Student at 42";
+	t_list *lstnewResult = ft_lstnew(lstNew);
+    if (lstnewResult == NULL) {
+        printf("LstNew Memory allocation failed\n\n");
+    } else {
+        printf("LstNew Content = %s\n", (char *)lstnewResult->content);
+        free(lstnewResult);
+        printf("\n\n");
+    }
 
 	return (0);
 }
