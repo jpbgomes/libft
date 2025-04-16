@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/16 14:18:26 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:08:21 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -278,6 +278,7 @@ int main(void)
     if (lstnewResult == NULL) {
         printf("LstNew Memory allocation failed\n\n");
     } else {
+		printf("LstSize = %d\n", ft_lstsize(lstnewResult));
         printf("LstNew Content = %s\n", (char *)lstnewResult->content);
         free(lstnewResult);
         printf("\n\n");
@@ -300,6 +301,8 @@ int main(void)
 		    printf("1st node content = %s\n", (char *)lstAddFRes->content);    // "at 42"
         	printf("2nd node content = %s\n", (char *)lstAddFRes2->next->content);   // "I'm a Student"
 	
+			printf("LstSize = %d\n", ft_lstsize(lstAddFRes2));
+
 			t_list *current = lstAddFRes;
 			t_list *tmp;
 			while (current != NULL)
@@ -312,6 +315,76 @@ int main(void)
 			printf("\n\n");
 		}
     }
+
+	printf("\nft_lstsize:\n");
+	char lstSize1[] = "Primeiro";
+	char lstSize2[] = "Segundo";
+	char lstSize3[] = "Terceiro";
+	t_list *lstSize = ft_lstnew(lstSize1);
+	if (lstSize == NULL) {
+		printf("lstSize 1 Memory allocation failed\n\n");
+	} else {
+		t_list *node2 = ft_lstnew(lstSize2);
+		t_list *node3 = ft_lstnew(lstSize3);
+		if (node2 == NULL || node3 == NULL) {
+			printf("lstSize 2 or 3 Memory allocation failed\n\n");
+			free(lstSize);
+			free(node2);
+			free(node3);
+		} else {
+			ft_lstadd_front(&lstSize, node2); 
+			ft_lstadd_front(&node2, node3);   
+
+			printf("List Size = %d\n", ft_lstsize(node3));
+
+			t_list *current = node3;
+			t_list *tmp;
+			while (current != NULL) {
+				tmp = current->next;
+				free(current);
+				current = tmp;
+			}
+		}
+		printf("\n\n");
+	}
+
+	printf("\nft_lstlast:\n");
+	char last1[] = "Início";
+	char last2[] = "Meio";
+	char last3[] = "Fim";
+
+	t_list *lstLast = ft_lstnew(last1);
+	if (lstLast == NULL) {
+		printf("lstLast 1 Memory allocation failed\n\n");
+	} else {
+		t_list *mid = ft_lstnew(last2);
+		t_list *end = ft_lstnew(last3);
+		if (mid == NULL || end == NULL) {
+			printf("lstLast 2 or 3 Memory allocation failed\n\n");
+			free(lstLast);
+			free(mid);
+			free(end);
+		} else {
+			ft_lstadd_front(&lstLast, mid);
+			ft_lstadd_front(&mid, end);
+
+			t_list *last = ft_lstlast(end);
+			if (last != NULL)
+				printf("Last Node Content = %s\n", (char *)last->content);
+			else
+				printf("List is empty, no last node\n");
+
+			// Limpar
+			t_list *current = end;
+			t_list *tmp;
+			while (current != NULL) {
+				tmp = current->next;
+				free(current);
+				current = tmp;
+			}
+		}
+		printf("\n\n");
+	}
 
 	return (0);
 }

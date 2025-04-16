@@ -6,13 +6,13 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:10:46 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:51 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:20:02 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_contains(char *set, char c)
+static int	ft_contains(char *set, char c)
 {
 	int	i;
 
