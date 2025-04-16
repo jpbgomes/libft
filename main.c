@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/16 16:08:21 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:42:24 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -352,7 +352,6 @@ int main(void)
 	char last1[] = "Início";
 	char last2[] = "Meio";
 	char last3[] = "Fim";
-
 	t_list *lstLast = ft_lstnew(last1);
 	if (lstLast == NULL) {
 		printf("lstLast 1 Memory allocation failed\n\n");
@@ -381,6 +380,51 @@ int main(void)
 				tmp = current->next;
 				free(current);
 				current = tmp;
+			}
+		}
+		printf("\n\n");
+	}
+
+
+	printf("\nft_lstadd_back:\n");
+	char back1[] = "Inicio";
+	char back2[] = "Meio";
+	char back3[] = "Fim";
+	t_list *lstBack = ft_lstnew(back1);
+	if (lstBack == NULL) {
+		printf("lstBack 1 Memory allocation failed\n\n");
+	} else {
+		t_list *b2 = ft_lstnew(back2);
+		t_list *b3 = ft_lstnew(back3);
+		if (b2 == NULL || b3 == NULL) {
+			printf("lstBack 2 or 3 Memory allocation failed\n\n");
+			free(lstBack);
+			free(b2);
+			free(b3);
+		} else {
+			ft_lstadd_back(&lstBack, b2); // lstBack -> b2
+			ft_lstadd_back(&lstBack, b3); // lstBack -> b2 -> b3
+
+			t_list *tmp = lstBack;
+			int i = 1;
+			while (tmp != NULL) {
+				printf("Node %d content = %s\n", i, (char *)tmp->content);
+				tmp = tmp->next;
+				i++;
+			}
+
+			printf("List Size = %d\n", ft_lstsize(lstBack));
+
+			t_list *last = ft_lstlast(lstBack);
+			if (last != NULL)
+				printf("Last Node Content = %s\n", (char *)last->content);
+
+			t_list *current = lstBack;
+			t_list *next;
+			while (current != NULL) {
+				next = current->next;
+				free(current);
+				current = next;
 			}
 		}
 		printf("\n\n");
