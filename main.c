@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/16 12:41:22 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:18:26 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,6 +281,36 @@ int main(void)
         printf("LstNew Content = %s\n", (char *)lstnewResult->content);
         free(lstnewResult);
         printf("\n\n");
+    }
+
+	printf("\nft_lstadd_front:\n");
+	char lstAddFront[] = "I'm a Student";
+	char lstAddFront2[] = "at 42";
+	t_list *lstAddFRes = ft_lstnew(lstAddFront);
+    if (lstAddFRes == NULL) {
+        printf("lstAddFront 1 Memory allocation failed\n\n");
+    } else {
+		t_list *lstAddFRes2 = ft_lstnew(lstAddFront2);
+		if (lstAddFRes2 == NULL) {
+			printf("lstAddFront 2 Memory allocation failed\n\n");
+	        free(lstAddFRes);
+		} else {
+			ft_lstadd_front(&lstAddFRes, lstAddFRes2);
+
+		    printf("1st node content = %s\n", (char *)lstAddFRes->content);    // "at 42"
+        	printf("2nd node content = %s\n", (char *)lstAddFRes2->next->content);   // "I'm a Student"
+	
+			t_list *current = lstAddFRes;
+			t_list *tmp;
+			while (current != NULL)
+			{
+				tmp = current->next;
+				free(current);
+				current = tmp;
+			}
+			
+			printf("\n\n");
+		}
     }
 
 	return (0);
