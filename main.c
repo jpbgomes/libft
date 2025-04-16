@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/16 17:42:24 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:22:41 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	upper_replacer(unsigned int i, char *c)
 		*c = ft_toupper(*c);
 }
 	
+void	*delnode(void *lst)
+{
+	printf("\n%s\n", (t_list *)lst->content);
+	return (lst);
+}
 
 int main(void)
 {
@@ -298,8 +303,8 @@ int main(void)
 		} else {
 			ft_lstadd_front(&lstAddFRes, lstAddFRes2);
 
-		    printf("1st node content = %s\n", (char *)lstAddFRes->content);    // "at 42"
-        	printf("2nd node content = %s\n", (char *)lstAddFRes2->next->content);   // "I'm a Student"
+		    printf("1st node content = %s\n", (char *)lstAddFRes->content);
+        	printf("2nd node content = %s\n", (char *)lstAddFRes2->next->content);
 	
 			printf("LstSize = %d\n", ft_lstsize(lstAddFRes2));
 
@@ -373,7 +378,6 @@ int main(void)
 			else
 				printf("List is empty, no last node\n");
 
-			// Limpar
 			t_list *current = end;
 			t_list *tmp;
 			while (current != NULL) {
@@ -402,8 +406,8 @@ int main(void)
 			free(b2);
 			free(b3);
 		} else {
-			ft_lstadd_back(&lstBack, b2); // lstBack -> b2
-			ft_lstadd_back(&lstBack, b3); // lstBack -> b2 -> b3
+			ft_lstadd_back(&lstBack, b2);
+			ft_lstadd_back(&lstBack, b3);
 
 			t_list *tmp = lstBack;
 			int i = 1;
@@ -430,6 +434,15 @@ int main(void)
 		printf("\n\n");
 	}
 
+	char delN[] = "Delete Node";
+	t_list *lstDel = ft_lstnew(delN);
+	if (lstDel == NULL) {
+		printf("lstDel Memory allocation failed\n\n");
+	} else {
+		ft_lstdelone(lstDel, delnode);
+	}
+
 	return (0);
 }
+
 
