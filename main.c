@@ -6,11 +6,12 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/17 11:57:47 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:24:16 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 char	upper_caller(unsigned int i, char c)
 {
@@ -21,9 +22,26 @@ char	upper_caller(unsigned int i, char c)
 
 void	upper_replacer(unsigned int i, char *c)
 {
-	if (*c >= 97 && *c <= 122 && i)
+	if (*c >= 97 && *c <= 122 && i >= 0)
+	{
 		*c = ft_toupper(*c);
+	}
 }
+
+void	upper_caller_s(void *s)
+{
+	int i;
+	char	*str;
+
+	i = 0;
+	str = (char *)s;
+	while (str[i])
+	{
+		upper_replacer(i, &str[i]);
+		i++;
+	}
+}
+
 	
 void	delnodeContent(void *lst)
 {
@@ -178,6 +196,8 @@ int main(void)
 		printf("\n\n");
    	}
 
+
+	printf("\nft_striteri:\n");
 	char sStrIteri[] = "hello, my name is jose";
 	ft_striteri(sStrIteri, upper_replacer);
 	printf("Iteri Result = %s\n", sStrIteri);
@@ -450,6 +470,96 @@ int main(void)
 			printf("lstDel Memory allocation failed\n\n");
 		} else {
 			ft_lstdelone(lstDel, *delnodeContent);
+		}
+	}
+
+	printf("\nft_lstclear:\n");
+	char *lstClear = malloc(14);
+	char *lstClear2 = malloc(6);
+	if (!lstClear || !lstClear2) {
+		printf("Memory allocation failed\n\n");
+		free(lstClear);
+		free(lstClear2);
+	} else {
+		lstClear[0] = 'I';
+		lstClear[1] = '\'';
+		lstClear[2] = 'm';
+		lstClear[3] = ' ';
+		lstClear[4] = 'a';
+		lstClear[5] = ' ';
+		lstClear[6] = 'S';
+		lstClear[7] = 't';
+		lstClear[8] = 'u';
+		lstClear[9] = 'd';
+		lstClear[10] = 'e';
+		lstClear[11] = 'n';
+		lstClear[12] = 't';
+		lstClear[13] = '\0';
+
+		lstClear2[0] = 'a';
+		lstClear2[1] = 't';
+		lstClear2[2] = ' ';
+		lstClear2[3] = '4';
+		lstClear2[4] = '2';
+		lstClear2[5] = '\0';
+
+		t_list *lstClearRes = ft_lstnew(lstClear);
+		if (lstClearRes == NULL) {
+			printf("lstClear 1 Memory allocation failed\n\n");
+			free(lstClear);
+			free(lstClear2);
+		} else {
+			t_list *lstClearRes2 = ft_lstnew(lstClear2);
+			if (lstClearRes2 == NULL) {
+				printf("lstClear 2 Memory allocation failed\n\n");
+				free(lstClear);
+				free(lstClear2);
+				free(lstClearRes);
+			} else {
+				ft_lstadd_front(&lstClearRes2, lstClearRes);
+				ft_lstclear(&lstClearRes2, delnodeContent);
+				printf("\n");
+			}
+		}
+	}
+
+	printf("\nft_lstiter:\n");
+	char *lstIter = malloc(14);
+	char *lstIter2 = malloc(6);
+	if (!lstIter || !lstIter2) {
+		printf("Memory allocation failed\n\n");
+		free(lstIter);
+		free(lstIter2);
+	} else {
+		lstIter[0] = 'a';
+		lstIter[1] = 'b';
+		lstIter[2] = 'c';
+		lstIter[3] = 'd';
+		lstIter[4] = '\0';
+
+		lstIter2[0] = 'e';
+		lstIter2[1] = 'f';
+		lstIter2[2] = 'g';
+		lstIter2[3] = 'h';
+		lstIter2[4] = '\0';
+
+		t_list *lstIterRes = ft_lstnew(lstIter);
+		if (lstIterRes == NULL) {
+			printf("lstIter 1 Memory allocation failed\n\n");
+			free(lstIter);
+			free(lstIter2);
+		} else {
+			t_list *lstIterRes2 = ft_lstnew(lstIter2);
+			if (lstIterRes2 == NULL) {
+				printf("lstIter 2 Memory allocation failed\n\n");
+				free(lstIter);
+				free(lstIter2);
+				free(lstIterRes);
+			} else {
+				ft_lstadd_front(&lstIterRes2, lstIterRes);
+				ft_lstiter(lstIterRes2, upper_caller_s);
+				printf("\n\n");
+			}
 		}
 	}
 
