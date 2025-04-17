@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/17 13:24:16 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:25:22 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	upper_replacer(unsigned int i, char *c)
 	}
 }
 
-void	upper_caller_s(void *s)
+void	upper_replacer_s(void *s)
 {
 	int i;
 	char	*str;
@@ -40,6 +40,29 @@ void	upper_caller_s(void *s)
 		upper_replacer(i, &str[i]);
 		i++;
 	}
+}
+
+char	*upper_s(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
+}
+
+void	*upper_new(void *s)
+{
+	size_t	len;
+	char	*str;
+
+	len = ft_strlen((char *)s);
+	str = ft_strdup((char *)upper_s(s));
+	return (str);
 }
 
 	
@@ -557,7 +580,55 @@ int main(void)
 				free(lstIterRes);
 			} else {
 				ft_lstadd_front(&lstIterRes2, lstIterRes);
-				ft_lstiter(lstIterRes2, upper_caller_s);
+				ft_lstiter(lstIterRes2, upper_replacer_s);
+				printf("\n\n");
+			}
+		}
+	}
+
+	printf("\nft_lstmap:\n");
+	char *lstMap = malloc(14);
+	char *lstMap2 = malloc(6);
+	if (!lstMap || !lstMap2) {
+		printf("Memory allocation failed\n\n");
+		free(lstMap);
+		free(lstMap2);
+	} else {
+		lstMap[0] = 'a';
+		lstMap[1] = 'b';
+		lstMap[2] = 'c';
+		lstMap[3] = 'd';
+		lstMap[4] = '\0';
+
+		lstMap2[0] = 'e';
+		lstMap2[1] = 'f';
+		lstMap2[2] = 'g';
+		lstMap2[3] = 'h';
+		lstMap2[4] = '\0';
+
+		t_list *lstMapRes = ft_lstnew(lstMap);
+		if (lstMapRes == NULL) {
+			printf("lstMap 1 Memory allocation failed\n\n");
+			free(lstMap);
+			free(lstMap2);
+		} else {
+			t_list *lstMapRes2 = ft_lstnew(lstMap2);
+			if (lstMapRes2 == NULL) {
+				printf("lstMap 2 Memory allocation failed\n\n");
+				free(lstMap);
+				free(lstMap2);
+				free(lstMapRes);
+			} else {
+				ft_lstadd_front(&lstMapRes2, lstMapRes);
+
+				printf("Old Content = %s\n", (char *)lstMapRes->content);
+				printf("Old Content = %s\n", (char *)lstMapRes2->next->content);
+				
+				ft_lstmap(lstMapRes2, upper_new, delnodeContent);
+
+				printf("New Content = %s\n", (char *)lstMapRes->content);
+				printf("New Content = %s\n", (char *)lstMapRes2->next->content);
+
 				printf("\n\n");
 			}
 		}
