@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:35:39 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/16 18:22:41 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:57:47 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	upper_replacer(unsigned int i, char *c)
 		*c = ft_toupper(*c);
 }
 	
-void	*delnode(void *lst)
+void	delnodeContent(void *lst)
 {
-	printf("\n%s\n", (t_list *)lst->content);
-	return (lst);
+	if (lst)
+		free(lst);
 }
 
 int main(void)
@@ -434,12 +434,23 @@ int main(void)
 		printf("\n\n");
 	}
 
-	char delN[] = "Delete Node";
-	t_list *lstDel = ft_lstnew(delN);
-	if (lstDel == NULL) {
-		printf("lstDel Memory allocation failed\n\n");
-	} else {
-		ft_lstdelone(lstDel, delnode);
+	printf("\nft_lstdelone:\n");
+	char *delN = malloc(6);
+	if (delN)
+	{
+		int i = 0;
+		while (i < 6)
+		{
+			delN[i] = i + 48;
+			i++;
+		}
+
+		t_list *lstDel = ft_lstnew(delN);
+		if (lstDel == NULL) {
+			printf("lstDel Memory allocation failed\n\n");
+		} else {
+			ft_lstdelone(lstDel, *delnodeContent);
+		}
 	}
 
 	return (0);
