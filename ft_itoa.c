@@ -6,16 +6,16 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:46:43 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/16 16:19:29 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/21 12:41:32 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countdigits(int n)
+static long	ft_countdigits(long n)
 {
-	int	i;
-	int	x;
+	long	i;
+	long	x;
 
 	i = 1;
 	x = n;
@@ -34,20 +34,20 @@ static int	ft_countdigits(int n)
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		x;
-	int		sign;
-	int		digits;
+	long		i;
+	long		x;
+	long		sign;
+	long		digits;
 	char	*res;
 
+	x = n;
 	i = 0;
 	sign = 1;
-	digits = ft_countdigits(n);
-	res = malloc(digits * sizeof(char));
+	digits = ft_countdigits(x);
+	res = malloc(digits + 1 * sizeof(char));
 	if (! res)
 		return (NULL);
-	x = n;
-	if (n < 0)
+	if (x < 0)
 	{
 		x *= -1;
 		sign *= -1;

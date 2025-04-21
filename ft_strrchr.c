@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 17:19:49 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:50 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/21 15:21:53 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (c == s[i])
+		if ((unsigned char)c == s[i])
 			return ((char *)s + i);
 		i--;
 	}

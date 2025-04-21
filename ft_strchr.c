@@ -6,22 +6,27 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:49:52 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:47 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/21 14:17:54 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		if (c == s[i])
-			return ((char *)s + i);
+		if (s[i] == (unsigned char)c)
+			return ((char *)(s + i));
 		i++;
 	}
-	if (s[i] == c)
-		return ((char *)(s + 1));
-	return (0);
+	if (s[i] == (unsigned char)c)
+		return ((char *)(s + i));
+	return (NULL);
 }
+
