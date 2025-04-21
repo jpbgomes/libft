@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:19:09 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/17 12:40:14 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:32:27 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 	t_list	*last;
-	
+
 	if (lst)
 	{
 		tmp = *lst;

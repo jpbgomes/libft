@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:25:23 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/21 16:24:17 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:36:31 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	**free_data(char **res)
 	int	i;
 
 	i = 0;
-	while(res[i])
+	while (res[i])
 	{
 		free(res[i]);
 		i++;
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 			k++;
 		wl = ft_wordlen(s, k, c);
 		if (wl == 0)
-			break;
+			break ;
 		res[i] = malloc(wl + 1);
 		if (!res[i])
 			return (free_data(res));
