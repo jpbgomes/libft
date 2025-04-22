@@ -32,26 +32,11 @@ static long	ft_countdigits(long n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+static	void	fill_data(char *res, long x, long sign, long digits)
 {
-	long		i;
-	long		x;
-	long		sign;
-	long		digits;
-	char	*res;
+	int	i;
 
-	x = n;
 	i = 0;
-	sign = 1;
-	digits = ft_countdigits(x);
-	res = malloc(digits + 1 * sizeof(char));
-	if (! res)
-		return (NULL);
-	if (x < 0)
-	{
-		x *= -1;
-		sign *= -1;
-	}
 	while (i < digits)
 	{
 		if (digits - i == 1 && sign == -1)
@@ -62,5 +47,28 @@ char	*ft_itoa(int n)
 		x = x / 10;
 	}
 	res[digits] = '\0';
+}
+
+char	*ft_itoa(int n)
+{
+	long		x;
+	long		sign;
+	long		digits;
+	char	*res;
+
+	x = n;
+	sign = 1;
+	digits = ft_countdigits(x);
+	res = malloc(digits + 1 * sizeof(char));
+	if (! res)
+		return (NULL);
+	if (x < 0)
+	{
+		x *= -1;
+		sign *= -1;
+	}
+	
+	fill_data(res, x, sign, digits);
+	printf("\n%c-%c\n", res[0], res[1]);
 	return (res);
 }

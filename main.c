@@ -10,7 +10,7 @@
 // /*                                                                            */
 // /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
 
 // char	upper_caller(unsigned int i, char c)
@@ -71,8 +71,8 @@
 // 		free(lst);
 // }
 
-// int main(void)
-// {
+int main(void)
+{
 // 	printf("\nft_atoi:\n");
 // 	printf(" -12345a68 = %d\n", ft_atoi(" -12345a68"));
 // 	printf("--12345a68 = %d\n", ft_atoi("--12345a68"));
@@ -125,15 +125,15 @@
 // 	printf("48 = %d\n", ft_isprint(48));
 // 	printf("127 = %d\n\n", ft_isprint(127));
 
-// 	printf("\nft_itoa:\n");
-// 	char *itoaResult = ft_itoa(-2147483648);
-// 	if (itoaResult == NULL)
-// 		printf("Itoa Memory allocation failed \n\n");
-// 	else {
-// 		printf("Itoa Result = %s\n", itoaResult);
-// 		free(itoaResult);
-// 		printf("\n\n");
-// 	}
+ 	printf("\nft_itoa:\n");
+ 	char *itoaResult = ft_itoa(-2147483648);
+ 	if (itoaResult == NULL)
+ 		printf("Itoa Memory allocation failed \n\n");
+ 	else {
+ 		printf("Itoa Result = %s\n", itoaResult);
+ 		free(itoaResult);
+ 		printf("\n\n");
+ 	}
 	
 // 	char sMChr[] = "Student at 42";
 // 	printf("ft_memchr:\n");
@@ -645,7 +645,7 @@
 // 		}
 // 	}
 
-// 	return (0);
-// }
+ 	return (0);
+}
 
 
