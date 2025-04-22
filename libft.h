@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 20:22:01 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/21 17:42:10 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:04:16 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdint.h> //SIZE_MAX
 # include <unistd.h>
 
 typedef struct s_list

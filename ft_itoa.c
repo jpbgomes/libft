@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:46:43 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/21 18:46:15 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:47:00 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	long		x;
 	long		sign;
 	long		digits;
-	char	*res;
+	char		*res;
 
 	x = n;
 	sign = 1;
@@ -67,8 +67,6 @@ char	*ft_itoa(int n)
 		x *= -1;
 		sign *= -1;
 	}
-	
 	fill_data(res, x, sign, digits);
-	printf("\n%c-%c\n", res[0], res[1]);
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: jpedro-b <jpedro-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:25:23 by jpedro-b          #+#    #+#             */
-/*   Updated: 2025/04/21 17:36:31 by jpedro-b         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:40:32 by jpedro-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,38 +57,43 @@ static char	**free_data(char **res)
 	return (NULL);
 }
 
+static char	**insert_data(char **res, int wc, const char *s, char c)
+{
+	int	j;
+	int	i;
+	int	start;
+	int	count;
+
+	j = 0;
+	i = 0;
+	while (j < wc)
+	{
+		count = 0;
+		if (s[i] != c)
+		{
+			start = i;
+			count = ft_wordlen(s, i, c);
+			res[j] = (char *)malloc(sizeof(char) * (count + 1));
+			if (!res[j])
+				return (free_data(res));
+			ft_strlcpy(res[j++], s + start, count + 1);
+		}
+		else
+			i++;
+		i = i + count;
+	}
+	return (res);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		i;
-	int		j;
-	int		k;
-	int		wl;
 
-	if (! s)
+	if (!s)
 		return (NULL);
-	i = 0;
-	j = 0;
-	k = 0;
-	res = malloc((ft_countwords(s, c) + 1) * sizeof(char *));
+	res = ft_calloc((ft_countwords(s, c) + 1), sizeof(char *));
 	if (!res)
 		return (NULL);
-	while (i < ft_countwords(s, c))
-	{
-		while (s[k] == c)
-			k++;
-		wl = ft_wordlen(s, k, c);
-		if (wl == 0)
-			break ;
-		res[i] = malloc(wl + 1);
-		if (!res[i])
-			return (free_data(res));
-		j = 0;
-		while (j < wl)
-			res[i][j++] = s[k++];
-		res[i][j] = '\0';
-		i++;
-	}
-	res[i] = NULL;
+	res = insert_data(res, ft_countwords(s, c), s, c);
 	return (res);
 }
